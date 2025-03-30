@@ -14,16 +14,33 @@ import org.kde.kquickcontrolsaddons
 PlasmoidItem {
     id: mainWindow
 
+    Component.onCompleted: plasmoid.configuration.isSpinning = 1 
+
+    /*I'm 99% sure I did this the wrong way, 
+    but this is the only way that I have found to make maxwell appear 
+    without going into the config, issue is that it starts from the middle
+    of the ComboBox. AHHHHHHHH!!*/
+    
     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
 
     AnimatedImage {
         id: animation
-        source: plasmoid.configuration.isSpinning ? "maxwell-spinning.gif" : "maxwell-wobble.gif"
+        
+        source: {
+            switch (plasmoid.configuration.isSpinning) {
+            case 1:
+                return "maxwell-spinning.gif";
+            case 2:
+                return "maxwell-patted.gif";
+            case 0:
+                return "maxwell-wobble.gif";
+            }
+        }
         width: mainWindow.width
         fillMode: Image.PreserveAspectFit
-        mirror: plasmoid.configuration.mirror
-        speed: plasmoid.configuration.speed
-        mipmap: plasmoid.configuration.hq
+        mirror: plasmoid.configuration.mirror 
+        speed: plasmoid.configuration.speed 
+        mipmap: plasmoid.configuration.hq 
     }
 }
 

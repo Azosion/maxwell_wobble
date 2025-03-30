@@ -18,7 +18,7 @@ PlasmoidItem {
 
     AnimatedImage {
         id: animation
-        source: "maxwell-spinning.gif"
+        source: "maxwell-wobble.gif"
         width: mainWindow.width
         fillMode: Image.PreserveAspectFit
         mirror: plasmoid.configuration.mirror

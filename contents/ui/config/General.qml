@@ -11,6 +11,8 @@ Kirigami.FormLayout {
     property alias cfg_speed: speed.value
     property alias cfg_mirror: mirror.checked
     property alias cfg_hq: hq.checked
+    property alias cfg_isSpinning: toggleButton.checked
+    
 
     Slider {
         Layout.preferredWidth: 15 * Kirigami.Units.gridUnit
@@ -29,5 +31,10 @@ Kirigami.FormLayout {
     CheckBox {
         id: hq
         Kirigami.FormData.label: i18n("High render quality")
+    }
+
+    CheckBox {
+        id: toggleButton
+        Kirigami.FormData.label: i18n("Spinning Mode")
     }
 }

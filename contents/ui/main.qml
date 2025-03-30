@@ -18,11 +18,10 @@ PlasmoidItem {
 
     AnimatedImage {
         id: animation
-        source: "maxwell-wobble.gif"
+        source: plasmoid.configuration.isSpinning ? "maxwell-spinning.gif" : "maxwell-wobble.gif"
         width: mainWindow.width
         fillMode: Image.PreserveAspectFit
         mirror: plasmoid.configuration.mirror
-        // height: mainWindow.height
         speed: plasmoid.configuration.speed
         mipmap: plasmoid.configuration.hq
     }

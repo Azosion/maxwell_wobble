@@ -7,3 +7,5 @@ Forked from https://github.com/wilversings/maxwell, all I did was change the gif
 
 
 You can switch between which gif you want in the config.
+
+P.S I have a drop down menu system working (diffrent branch), with a slight Ui bug that I am trying to fix (by default the dropdown menu starts in the middle, rather than at the top).
